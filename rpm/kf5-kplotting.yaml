@@ -1,0 +1,56 @@
+Name         : kf5-kplotting
+Version      : 4.99.0
+Release      : 1
+Group        : System/Base
+License      : GPLv2+
+Summary      : KDE Frameworks 5 Tier 1 addon for plotting
+Description  : |
+  KPlotting provides classes to do plotting.
+URL          : http://www.kde.org
+SetupOptions : -q -n %{name}-%{version}/upstream
+
+Sources:
+    - "%{name}-%{version}.tar.xz"
+
+RpmLintIgnore:
+    - devel-file-in-non-devel-package
+    - no-changelogname-tag
+    - library-without-ldconfig-postin
+    - library-without-ldconfig-postun
+
+Configure    : none
+Builder      : none
+
+PkgBR:
+    - kf5-rpm-macros
+    - extra-cmake-modules
+    - qt5-tools
+    - perl
+    - pcre-devel
+PkgConfigBR:
+    - Qt5Widgets
+    - Qt5Test
+Requires:
+    - kf5-filesystem
+
+RequiresPost:
+    - /sbin/ldconfig
+RequiresPostUn:
+    - /sbin/ldconfig
+
+Files:
+    - "%doc COPYING.LIB README.md"
+
+SubPackages:
+    - Name: devel
+      Group: Development/Libraries
+      Summary: Development files for %{name}
+      Description: |
+        The %{name}-devel package contains the files necessary to develop applications
+        that use %{name}.
+      Files:
+          - "%{_kf5_includedir}/KPlotting"
+          - "%{_kf5_includedir}/kplotting_version.h"
+          - "%{_kf5_libdir}/libKF5Plotting.so"
+          - "%{_kf5_libdir}/cmake/KF5Plotting"
+          - "%{_datadir}/qt5/mkspecs/modules/qt_KPlotting.pri"
