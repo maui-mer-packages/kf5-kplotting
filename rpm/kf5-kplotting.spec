@@ -78,6 +78,7 @@ rm -rf %{buildroot}
 %files
 %defattr(-,root,root,-)
 %doc COPYING.LIB README.md
+%{_kf5_libdir}/libKF5Plotting.so.*
 # >> files
 # << files
 
