@@ -26,10 +26,10 @@ PkgBR:
     - extra-cmake-modules
     - qt5-tools
     - perl
-    - pcre-devel
 PkgConfigBR:
     - Qt5Widgets
     - Qt5Test
+    - libpcre
 Requires:
     - kf5-filesystem
 
