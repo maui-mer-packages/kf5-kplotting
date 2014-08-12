@@ -1,5 +1,5 @@
-Name         : kf5-kplotting
-Version      : 5.0.0
+Name         : kplotting
+Version      : 5.1.0
 Release      : 1
 Group        : System/Base
 License      : GPLv2+
@@ -53,5 +53,5 @@ SubPackages:
           - "%{_kf5_includedir}/KPlotting"
           - "%{_kf5_includedir}/kplotting_version.h"
           - "%{_kf5_libdir}/libKF5Plotting.so"
-          - "%{_kf5_libdir}/cmake/KF5Plotting"
-          - "%{_datadir}/qt5/mkspecs/modules/qt_KPlotting.pri"
+          - "%{_kf5_cmakedir}/KF5Plotting"
+          - "%{_kf5_mkspecsdir}/qt_KPlotting.pri"
