@@ -7,7 +7,6 @@ Summary      : KDE Frameworks 5 Tier 1 addon for plotting
 Description  : |
   KPlotting provides classes to do plotting.
 URL          : http://www.kde.org
-SetupOptions : -q -n %{name}-%{version}/upstream
 
 Sources:
     - "%{name}-%{version}.tar.xz"
